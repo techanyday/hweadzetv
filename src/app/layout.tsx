@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  icons: {
+    icon: "/hweadzetv-mark.svg",
+    shortcut: "/hweadzetv-mark.svg",
+    apple: "/hweadzetv-mark.svg",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
