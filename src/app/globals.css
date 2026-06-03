@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07070b;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+a,
+button,
+input,
+textarea {
+  transition-property: color, background-color, border-color, transform, opacity,
+    box-shadow;
+  transition-duration: 180ms;
+}
+
+::selection {
+  background: rgba(217, 70, 239, 0.35);
+  color: #fff;
+}
+
+.blog-prose {
+  color: inherit;
+}
+
+.blog-prose > :first-child {
+  margin-top: 0;
+}
+
+.blog-prose > :last-child {
+  margin-bottom: 0;
+}
+
+.blog-prose h1,
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  margin-top: 1.75em;
+  margin-bottom: 0.65em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.blog-prose h1 {
+  font-size: 2.4rem;
+}
+
+.blog-prose h2 {
+  font-size: 1.8rem;
+}
+
+.blog-prose h3 {
+  font-size: 1.45rem;
+}
+
+.blog-prose p,
+.blog-prose ul,
+.blog-prose ol,
+.blog-prose blockquote,
+.blog-prose pre {
+  margin: 1.1em 0;
+  line-height: 1.95;
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  padding-left: 1.35rem;
+}
+
+.blog-prose ul {
+  list-style: disc;
+}
+
+.blog-prose ol {
+  list-style: decimal;
+}
+
+.blog-prose li {
+  margin: 0.45em 0;
+}
+
+.blog-prose a {
+  color: #d8b4fe;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.blog-prose strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+.blog-prose em {
+  font-style: italic;
+}
+
+.blog-prose blockquote {
+  border-left: 3px solid rgba(217, 70, 239, 0.55);
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.blog-prose code {
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.45rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.95em;
+}
+
+.blog-prose pre {
+  overflow-x: auto;
+  border-radius: 1.25rem;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1rem 1.1rem;
+}
+
+.blog-prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.blog-prose img {
+  margin: 1.6rem 0;
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  pointer-events: none;
+  float: left;
+  height: 0;
+  color: #94a3b8;
+  content: "Start writing...";
+}

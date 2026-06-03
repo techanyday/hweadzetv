@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hweadzetv
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm run db:deploy && npm run start
+    disk:
+      name: hweadzetv-data
+      mountPath: /var/data
+      sizeGB: 1
