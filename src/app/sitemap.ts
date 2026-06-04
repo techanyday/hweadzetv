@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 import { getPublishedPosts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await getPublishedPosts();
+export const dynamic = "force-dynamic";
 
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: siteConfig.url,
@@ -21,13 +21,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: post.updatedAt ?? post.publishedAt ?? post.createdAt,
-    changeFrequency: "weekly",
-    priority: 0.8,
-    ...(post.featuredImage ? { images: [post.featuredImage] } : {}),
-  }));
+  try {
+    const posts = await getPublishedPosts();
 
-  return [...staticRoutes, ...postRoutes];
+    const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt ?? post.createdAt,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      ...(post.featuredImage ? { images: [post.featuredImage] } : {}),
+    }));
+
+    return [...staticRoutes, ...postRoutes];
+  } catch {
+    return staticRoutes;
+  }
 }
