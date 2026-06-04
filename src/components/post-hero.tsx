@@ -46,9 +46,6 @@ export function PostHero({ post }: { post: PostRecord }) {
           >
             Read the feature
           </Link>
-          <div className="rounded-full border border-white/10 px-5 py-3 text-sm text-white/60">
-            {post.views.toLocaleString()} views and counting
-          </div>
         </div>
       </div>
 

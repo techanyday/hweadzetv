@@ -89,7 +89,6 @@ export default async function BlogPostPage(
                 <span>{post.category || "Editorial"}</span>
                 <span>{formatDate(post.publishedAt)}</span>
                 <span>{post.readingTime}</span>
-                <span>{post.views.toLocaleString()} views</span>
               </div>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
                 {post.title}

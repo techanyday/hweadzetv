@@ -51,8 +51,7 @@ export function PostCard({ post, compact = false }: PostCardProps) {
 
           <p className="text-sm leading-7 text-white/65">{post.excerpt}</p>
 
-          <div className="flex items-center justify-between text-sm text-white/55">
-            <span>{post.views.toLocaleString()} views</span>
+          <div className="flex items-center justify-end text-sm text-white/55">
             <span className="font-medium text-white">Read article</span>
           </div>
         </div>
