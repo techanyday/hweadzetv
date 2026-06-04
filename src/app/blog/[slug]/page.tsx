@@ -134,11 +134,8 @@ export default async function BlogPostPage(
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/45">
                 About this story
               </p>
-              <div className="mt-5 space-y-4 text-sm text-white/65">
-                <p>
-                  Published by {siteConfig.name} with a premium editorial layout optimized for long-form reading.
-                </p>
-                <p>Featured image upload, rich formatting, and automatic sections are all managed from the admin studio.</p>
+              <div className="mt-5 text-sm leading-7 text-white/65">
+                <p>{post.excerpt}</p>
               </div>
             </div>
 
