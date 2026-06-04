@@ -116,9 +116,6 @@ export default async function Home() {
                     <div className="space-y-2">
                       <p className="text-base font-semibold text-white">{post.title}</p>
                       <p className="text-sm leading-6 text-white/60">{post.excerpt}</p>
-                      <p className="text-xs uppercase tracking-[0.24em] text-white/35">
-                        {post.views.toLocaleString()} views
-                      </p>
                     </div>
                   </Link>
                 ))}
