@@ -5,6 +5,10 @@ import { siteConfig } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
+function toAbsoluteUrl(value: string) {
+  return new URL(value, siteConfig.url).toString();
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -29,7 +33,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: post.updatedAt ?? post.publishedAt ?? post.createdAt,
       changeFrequency: "weekly",
       priority: 0.8,
-      ...(post.featuredImage ? { images: [post.featuredImage] } : {}),
+      ...(post.featuredImage
+        ? { images: [toAbsoluteUrl(post.featuredImage)] }
+        : {}),
     }));
 
     return [...staticRoutes, ...postRoutes];
