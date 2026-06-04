@@ -21,23 +21,23 @@ export default async function Home() {
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.18),_transparent_24%),linear-gradient(180deg,_#09090f_0%,_#0f172a_100%)] text-white">
       <SiteHeader />
 
-      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-14 px-6 py-14 lg:px-10">
-        <section className="space-y-6">
-          <div className="inline-flex rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-12 px-6 py-10 md:py-12 lg:px-10">
+        <section className="space-y-4">
+          <div className="inline-flex rounded-full border border-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
             {homepageSettings.heroEyebrow}
           </div>
-          <div className="space-y-6">
-            <h1 className="max-w-5xl text-5xl font-semibold leading-tight text-white md:text-6xl lg:text-7xl">
+          <div className="space-y-4">
+            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white md:text-5xl xl:text-6xl">
               {homepageSettings.heroTitle}
             </h1>
-            <p className="max-w-3xl text-lg leading-8 text-white/65">
+            <p className="max-w-2xl text-base leading-7 text-white/65 md:text-lg">
               {homepageSettings.heroDescription}
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/blog"
-              className="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/5"
+              className="rounded-full border border-white/10 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/5"
             >
               Explore stories
             </Link>
