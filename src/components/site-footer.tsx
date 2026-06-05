@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-zinc-950">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-10 text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+      <div className="mx-auto flex w-full max-w-[96rem] flex-col gap-6 px-5 py-10 text-sm text-white/60 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8 xl:px-10 2xl:max-w-[104rem]">
         <div className="space-y-2">
           <p className="text-base font-semibold text-white">{siteConfig.name}</p>
           <p className="max-w-xl">{siteConfig.description}</p>

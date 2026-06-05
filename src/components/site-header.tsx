@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[rgba(7,7,11,0.72)] backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+      <div className="mx-auto flex w-full max-w-[96rem] items-center justify-between px-5 py-4 sm:px-6 lg:px-8 xl:px-10 2xl:max-w-[104rem]">
         <Link href="/" aria-label={siteConfig.name} className="flex items-center">
           <Image
             src="/hweadzetv-logo.svg"
