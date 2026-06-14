@@ -11,7 +11,19 @@ export function SiteFooter() {
           <p className="max-w-xl">{siteConfig.description}</p>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-5">
+          <Link href="/about" className="transition hover:text-white">
+            About
+          </Link>
+          <Link href="/contact" className="transition hover:text-white">
+            Contact
+          </Link>
+          <Link href="/privacy" className="transition hover:text-white">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="transition hover:text-white">
+            Terms & Conditions
+          </Link>
           <Link href="/blog" className="transition hover:text-white">
             All posts
           </Link>
